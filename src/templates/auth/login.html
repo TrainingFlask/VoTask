@@ -5,23 +5,42 @@
 {% endblock %}
 
 {% block navButton %}
-    <a href="{{ url_for('auth.register') }}"><button type="submit" class="btn btn-primary">Sign up</button></a>
+    <a href="{{ url_for('auth.register') }}"><button type="button" class="btn btn-primary">Sign up</button></a>
 {% endblock%}
 
-{% block num1 %}
+{% block num2 %}
     <div class="container">
-        <h2>Sign in to your account</h2>
-        <form action="" method="POST">
-            {{ hidden_tag() }}
-            <div>
-                {{ form.email.label }}
-                {{ form.email }}
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+                <h2>Sign in to your account</h2>
             </div>
-            <div>
-                {{ form.password.label }}
-                {{ form.password }}
+        </div>
+
+        <form action="" method="POST" class="form-horizontal">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <p>{{ form.email.label }}</p>
+                    <p>{{ form.email(class="form-control") }}</p>
+                </div>
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <p>{{ form.password.label }}</p>
+                    <p>{{ form.password(class="form-control") }}</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <p>{{ form.remember_me }}{{ form.remember_me.label }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </div>
+            </div>
         </form>
     </div>
 {% endblock %}

@@ -55,11 +55,22 @@
               <input type="password" placeholder="Password" class="form-control" value="{{ request.form.password }}" style="display: none">
             </div>
             {% block navButton %}
-              <a href="{{ url_for('auth.login') }}"><button type="submit" class="btn btn-success">Sign in</button></a>
-              <button type="submit" class="btn btn-primary">Sign up</button>
+              <a href="{{ url_for('auth.login') }}"><button type="button" class="btn btn-success">Sign in</button></a>
+              <a href="{{ url_for('auth.register') }}"><button type="button" class="btn btn-primary">Sign up</button></a>
             {% endblock %}
           </form>
         </div><!--/.navbar-collapse -->
+        <div class="">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>message</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
       </div>
     </nav>
 
