@@ -3,7 +3,7 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'strong key'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///votask.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///tmp/votask.db'
     WTF_CSRF_ENABLED = True
 
     @staticmethod

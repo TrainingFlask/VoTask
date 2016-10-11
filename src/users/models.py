@@ -1,6 +1,8 @@
 from src.ext import db
 from flask_login import UserMixin
 
+# TODO Complete User Model and Super User Model and Admins Model
+
 
 class UserModel(UserMixin, db.Model):
     __tablename__ = "rookie"
@@ -12,4 +14,3 @@ class UserModel(UserMixin, db.Model):
     @classmethod
     def set_user_model(cls, name, family, contact):
         return cls(rookie_name=name, rookie_family=family, rookie_contact=contact)
-

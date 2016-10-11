@@ -60,19 +60,20 @@
             {% endblock %}
           </form>
         </div><!--/.navbar-collapse -->
-        <div class="">
+      </div>
+        <div class="container">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <ul>
                         {% for message in messages %}
-                            <li>message</li>
+                            <li style="font-size: large;color: #9acfea">{{ message }}</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
             {% endwith %}
         </div>
-      </div>
     </nav>
+
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     {% block num1 %}
