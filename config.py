@@ -3,6 +3,7 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'strong key'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///votask.db'
 
     @staticmethod
     def init_app(app):
