@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Sign in
+{% endblock %}
+
+{% block navButton %}
+    <a href="{{ url_for('auth.register') }}"><button type="submit" class="btn btn-primary">Sign up</button></a>
+{% endblock%}
+
+{% block num1 %}
+    <div class="container">
+        <h2>Sign in to your account</h2>
+        <form action="" method="POST">
+            {{ hidden_tag() }}
+            <div>
+                {{ form.email.label }}
+                {{ form.email }}
+            </div>
+            <div>
+                {{ form.password.label }}
+                {{ form.password }}
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+    </div>
+{% endblock %}

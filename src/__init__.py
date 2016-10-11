@@ -2,6 +2,7 @@ from flask import Flask
 from flask_login import LoginManager
 
 from config import config
+from src.auth import bp_auth
 
 
 login_manager = LoginManager()
@@ -14,6 +15,8 @@ def create_app(config_name):
     
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
+    
+    app.register_blueprint(bp_auth, url_prefix='/auth')
 
     login_manager.init_app(app)
 
